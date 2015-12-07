@@ -6,6 +6,7 @@ A PHP Library used to parse CSS and select elements from a DOMDocument
 Contains code from https://github.com/tj/php-selector (the selector part)
 
 * Composer enabled
+* Contains PHPUnit tests
 
 == Examples
 
