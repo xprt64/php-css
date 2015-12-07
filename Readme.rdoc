@@ -11,68 +11,68 @@ Contains code from https://github.com/tj/php-selector (the selector part)
 
 Given the folowing PHP code
 
-	$dom	=	new \DOMDocument();
-
-	$dom->loadHTML(<<<HTMLCODE
-	<html>
-		<head>
-			<style type="text/css">
-				div.class1
-				{
-					color: #ff000;
-				}
-			</style>
-			<style type="text/css">
-				p.class2
-				{
-					text-align:center;
-				}
-				/* a comment the must be ignored by the parser */	
-				/* the next , intentionally put here, the parser should ignore it */
-				,p span
-				{
-					font-weight:bold;
-				}
-				a,
-				span.link
-				{
-					cursor: pointer;
-				}
-			</style>
-
-		</head>
-		<body>
-				<div class="class1">test1</div>
-				<p class="class2 class1">test1 <span class="link">in span</span></p>
-	   </body>
-	</html>
-	);
-	HTMLCODE
+  $dom	=	new \DOMDocument();
+  
+  $dom->loadHTML(<<<HTMLCODE
+  <html>
+  	<head>
+  		<style type="text/css">
+  			div.class1
+  			{
+  				color: #ff000;
+  			}
+  		</style>
+  		<style type="text/css">
+  			p.class2
+  			{
+  				text-align:center;
+  			}
+  			/* a comment the must be ignored by the parser */	
+  			/* the next , intentionally put here, the parser should ignore it */
+  			,p span
+  			{
+  				font-weight:bold;
+  			}
+  			a,
+  			span.link
+  			{
+  				cursor: pointer;
+  			}
+  		</style>
+  
+  	</head>
+  	<body>
+  			<div class="class1">test1</div>
+  			<p class="class2 class1">test1 <span class="link">in span</span></p>
+     </body>
+  </html>
+  HTMLCODE
+  );
 
 
 === Selecting elements
 Select elements like this:
-`Selector::selectElements("div", $dom)`
+  Selector::selectElements("div", $dom)
 This should return a DOMNodeList with one element.
 
-`Selector::selectElements(".class1,.class2", $dom)`
+  Selector::selectElements(".class1,.class2", $dom)
 This should return a DOMNodeList with 2 elements.
 
 === Applying CSS styles
 
-  $parser	=	new	Parser($dom);
+  $parser = new	Parser($dom);
   
   $parser->loadRulesFromDom();
   
-  $span	=	$this->dom->getElementsByTagName('span')[0];
+  $span = $this->dom->getElementsByTagName('span')[0];
   
-  $span_styles	=	$parser->getStylesFromCssRules($span);
+  $span_styles = $parser->getStylesFromCssRules($span);
 
 ```
 styles should contain 2 CSS styles:
 ```
-	font-weight:bold;
-	cursor: pointer;
+  font-weight:bold;
+  cursor: pointer;
 ```
 
 *
