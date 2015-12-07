@@ -11,7 +11,7 @@ Contains code from https://github.com/tj/php-selector (the selector part)
 
 Given the folowing PHP code
 
-```
+```php
 $dom	=	new \DOMDocument();
 
 $dom->loadHTML(<<<HTMLCODE
@@ -51,7 +51,7 @@ $dom->loadHTML(<<<HTMLCODE
 HTMLCODE
 ```
 
-=== Selecting elements ===
+=== Selecting elements
 Select elements like this:
 `Selector::selectElements("div", $dom)`
 This should return a DOMNodeList with one element.
@@ -59,9 +59,9 @@ This should return a DOMNodeList with one element.
 `Selector::selectElements(".class1,.class2", $dom)`
 This should return a DOMNodeList with 2 elements.
 
-=== Applying CSS styles ===
+=== Applying CSS styles
 
-```
+```php
 $parser	=	new	Parser($dom);
 
 $parser->loadRulesFromDom();
