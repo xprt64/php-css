@@ -39,11 +39,10 @@ Given the folowing PHP code
   				cursor: pointer;
   			}
   		</style>
-  
-  	</head>
+   	</head>
   	<body>
-  			<div class="class1">test1</div>
-  			<p class="class2 class1">test1 <span class="link">in span</span></p>
+  		<div class="class1">test1</div>
+  		<p class="class2 class1">test1 <span class="link">in span</span></p>
      </body>
   </html>
   HTMLCODE
@@ -68,12 +67,9 @@ This should return a DOMNodeList with 2 elements.
   
   $span_styles = $parser->getStylesFromCssRules($span);
 
-```
 styles should contain 2 CSS styles:
-```
   font-weight:bold;
   cursor: pointer;
-```
 
 *
 
