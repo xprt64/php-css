@@ -102,6 +102,8 @@ class Parser
 	{
 		$styles	=	array();
 		
+		$text	=	preg_replace('#\/\*(.*?)\*\/#ims', '', $text);
+		
 		$length	=	strlen($text);
 		
 		$offset	=	-1;
@@ -147,7 +149,7 @@ class Parser
 	}
 	
 	/**
-	 * Explodes $rules[]['style'] by ; and then by :
+	 * Explodes $rules[]['style'] by ;
 	 * @param array $rules
 	 * @return array
 	 */
@@ -158,6 +160,7 @@ class Parser
 			$style	=	$rule['style'];
 			
 			$styles	=	explode(';', $style);
+			
 			$styles	=	array_map(function($style){
 				return trim($style, "\r\n\t ,");
 			}, $styles);

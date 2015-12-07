@@ -1,17 +1,20 @@
 {
-    "name": "xprt64/php-css",
-    "description": "Selects elements from a DOMDocument by a CSS selector",
-    "authors": [
-        {
-            "name": "Constantin Galbenu",
-            "email": "xprt64@gmail.com"
-        }
-    ],
+	"name": "xprt64/php-css",
+	"description": "Selects elements from a DOMDocument by a CSS selector",
+	"authors": [
+		{
+			"name": "Constantin Galbenu",
+			"email": "xprt64@gmail.com"
+		}
+	],
 	"repositories": [
-      ],
- 	"autoload": {
-        "psr-4": {
+	],
+	"autoload": {
+		"psr-4": {
 			"Xprt64\\Css\\": "src/"
 		}
-    }	
+	},
+	"require-dev": {
+        "phpunit/phpunit": "5.0.*"
+    }
 }
