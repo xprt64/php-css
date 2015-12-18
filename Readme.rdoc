@@ -80,7 +80,7 @@ styles should contain 2 CSS styles:
 
 == More Information
 
-* 
+* Is used with {html to word (docx)}https://github.com/xprt64/PHPWord converter
 
 == License 
 
